@@ -1,0 +1,28 @@
+{
+  "name": "career-week-code-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "jest": "jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JKlause/career-week-code-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JKlause/career-week-code-challenges/issues"
+  },
+  "homepage": "https://github.com/JKlause/career-week-code-challenges#readme",
+  "dependencies": {
+    "eslint": "^6.5.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
