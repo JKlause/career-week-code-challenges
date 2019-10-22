@@ -19,4 +19,4 @@ module.exports = (date, diff) => {
   if(conversion[diffLetter] === undefined) return null;
 
   return new Date(dateNum + diffNum * conversion[diffLetter]);
-}
+};
