@@ -1,11 +1,11 @@
-const { data, results } = require('./data');
+const { data, result1 } = require('./data');
 const transaction = require('../transaction');
 
 describe('transaction', ()=> {
 
   it('aggregates transactions (revenue) and date outputs by date', () => {
-    
-    expect(transaction(data)).toEqual(results);
+
+    expect(transaction(data)).toEqual(result1);
 
   });
 
