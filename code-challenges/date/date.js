@@ -4,7 +4,7 @@ module.exports = (date, diff) => {
 
   const diffNum = Number(diff.match(/[0-9]/gi));
   const diffLetter = diff.match(/([a-z, A-Z]|[^0-9, |])/gi)[0];
-
+ 
   const conversion = {
     s: 1000,
     m: 60000,
