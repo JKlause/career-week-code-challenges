@@ -61,4 +61,56 @@ describe('Set class', () => {
 
     expect(name.union(mind)).toEqual(mind.set);
   });
+
+  it('returns array of difference values between two sets using difference method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(name.difference(mind)).toEqual(['george']);
+  });
+
+  it('returns array of intersected values between two sets using static intersected method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(Set.intersection(name, mind)).toEqual(name.set);
+  });
+
+  it('returns array of union values between two sets using static union method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(Set.union(name, mind)).toEqual(mind.set);
+  });
+
+  it('returns array of difference values between two sets using static difference method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(Set.difference(name, mind)).toEqual(['george']);
+  });
 });

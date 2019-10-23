@@ -35,23 +35,46 @@ class Set {
       if(!this.has(item)) acc.push(item);
       return acc;
     }, newSet);
-
   }
 
   difference(set) {
-
+    const newSet = set.set.reduce((acc, item) => {
+      if(!this.has(item)) acc.push(item);
+      return acc;
+    }, []);
+    return this.set.reduce((acc, item) => {
+      if(!this.has(item)) acc.push(item);
+      return acc;
+    }, newSet);
   }
 
   static intersection(set1, set2) {
-
+    return set1.set.reduce((acc, item) => {
+      if(set2.has(item)) acc.push(item);
+      return acc;
+    }, []);
   }
 
   static union(set1, set2) {
-
+    const newSet = set1.set.reduce((acc, item) => {
+      acc.push(item);
+      return acc;
+    }, []);
+    return set2.set.reduce((acc, item) => {
+      if(!set1.has(item)) acc.push(item);
+      return acc;
+    }, newSet);
   }
 
   static difference(set1, set2) {
-
+    const newSet = set2.set.reduce((acc, item) => {
+      if(!set1.has(item)) acc.push(item);
+      return acc;
+    }, []);
+    return set1.set.reduce((acc, item) => {
+      if(!set2.has(item)) acc.push(item);
+      return acc;
+    }, newSet);
   }
 }
 
