@@ -35,5 +35,30 @@ describe('Set class', () => {
     name.add('dawn');
     expect(name.has('george')).toBe(false);
   });
-  
+
+  it('returns array of intersected values between two sets using intersected method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(name.intersection(mind)).toEqual(name.set);
+  });
+
+  it('returns array of union values between two sets using union method', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('dawn');
+
+    const mind = new Set;
+    mind.add('billy');
+    mind.add('dawn');
+    mind.add('george');
+
+    expect(name.union(mind)).toEqual(mind.set);
+  });
 });
