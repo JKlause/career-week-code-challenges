@@ -13,7 +13,7 @@ module.exports = (date, diff) => {
     w: 'weeks',
     M: 'months',
     y: 'years'
-  };
+  }; 
 
   if(typeof diffNum !== 'number') return null;
   if(conversion[diffLetter] === undefined) return null;
