@@ -1,6 +1,6 @@
 class Set {
-  constructor() {
-    this.set = [];
+  constructor(array = []) {
+    this.set = array;
   }
 
   add(value) {
@@ -32,10 +32,11 @@ class Set {
   }
 
   static intersection(set1, set2) {
-    return set1.set.reduce((acc, item) => {
+    const newArray = set1.set.reduce((acc, item) => {
       if(set2.has(item)) acc.push(item);
       return acc;
     }, []);
+    return new Set(newArray);
   }
 
   static union(set1, set2) {
@@ -43,10 +44,11 @@ class Set {
       acc.push(item);
       return acc;
     }, []);
-    return set2.set.reduce((acc, item) => {
+    const newArray = set2.set.reduce((acc, item) => {
       if(!set1.has(item)) acc.push(item);
       return acc;
     }, newSet);
+    return new Set(newArray);
   }
 
   static difference(set1, set2) {
@@ -54,10 +56,11 @@ class Set {
       if(!set1.has(item)) acc.push(item);
       return acc;
     }, []);
-    return set1.set.reduce((acc, item) => {
+    const newArray = set1.set.reduce((acc, item) => {
       if(!set2.has(item)) acc.push(item);
       return acc;
     }, newSet);
+    return new Set(newArray);
   }
 }
 

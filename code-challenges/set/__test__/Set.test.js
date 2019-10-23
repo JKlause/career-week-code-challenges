@@ -46,7 +46,7 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(name.intersection(mind)).toEqual(name.set);
+    expect(name.intersection(mind)).toEqual(new Set(name.set));
   });
 
   it('returns array of union values between two sets using union method', () => {
@@ -59,7 +59,7 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(name.union(mind)).toEqual(mind.set);
+    expect(name.union(mind)).toEqual(new Set(mind.set));
   });
 
   it('returns array of difference values between two sets using difference method', () => {
@@ -72,7 +72,7 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(name.difference(mind)).toEqual(['george']);
+    expect(name.difference(mind)).toEqual(new Set(['george']));
   });
 
   it('returns array of intersected values between two sets using static intersected method', () => {
@@ -85,7 +85,7 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(Set.intersection(name, mind)).toEqual(name.set);
+    expect(Set.intersection(name, mind)).toEqual(new Set(name.set));
   });
 
   it('returns array of union values between two sets using static union method', () => {
@@ -98,7 +98,7 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(Set.union(name, mind)).toEqual(mind.set);
+    expect(Set.union(name, mind)).toEqual(new Set(mind.set));
   });
 
   it('returns array of difference values between two sets using static difference method', () => {
@@ -111,6 +111,6 @@ describe('Set class', () => {
     mind.add('dawn');
     mind.add('george');
 
-    expect(Set.difference(name, mind)).toEqual(['george']);
+    expect(Set.difference(name, mind)).toEqual(new Set(['george']));
   });
 });
