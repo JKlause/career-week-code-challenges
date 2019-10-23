@@ -20,32 +20,15 @@ class Set {
   }
 
   intersection(set) {
-    return set.set.reduce((acc, item) => {
-      if(this.has(item)) acc.push(item);
-      return acc;
-    }, []);
+    return Set.intersection(this, set);
   }
 
   union(set) {
-    const newSet = this.set.reduce((acc, item) => {
-      acc.push(item);
-      return acc;
-    }, []);
-    return set.set.reduce((acc, item) => {
-      if(!this.has(item)) acc.push(item);
-      return acc;
-    }, newSet);
+    return Set.union(this, set);
   }
 
   difference(set) {
-    const newSet = set.set.reduce((acc, item) => {
-      if(!this.has(item)) acc.push(item);
-      return acc;
-    }, []);
-    return this.set.reduce((acc, item) => {
-      if(!this.has(item)) acc.push(item);
-      return acc;
-    }, newSet);
+    return Set.difference(this, set);
   }
 
   static intersection(set1, set2) {
