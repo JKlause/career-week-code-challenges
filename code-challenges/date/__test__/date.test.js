@@ -1,11 +1,11 @@
-const add = require('../date');
+const add = require('../moment-date');
 
 
 describe('add', ()=> {
 
   it('adds the difference to the given date', () => {
     const date = new Date(1571706698637);
-
+  
     const twoSeconds = '2s';
     const twoMinutes = '2m';
     const twoHours = '2h';
@@ -18,9 +18,9 @@ describe('add', ()=> {
     expect(add(date, twoMinutes)).toEqual(new Date(1571706818637));
     expect(add(date, twoHours)).toEqual(new Date(1571713898637));
     expect(add(date, twoDays)).toEqual(new Date(1571879498637));
-    expect(add(date, twoWeeks)).toEqual(new Date(1572916298637));
-    expect(add(date, twoMonths)).toEqual(new Date(1607994698637));
-    expect(add(date, twoYears)).toEqual(new Date(2013210698637));
+    expect(add(date, twoWeeks)).toEqual(new Date(1572919898637));
+    expect(add(date, twoMonths)).toEqual(new Date(1576980698637));
+    expect(add(date, twoYears)).toEqual(new Date(1634865098637));
   });
 
 
