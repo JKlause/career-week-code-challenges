@@ -67,6 +67,7 @@ describe('Set class', () => {
     mind.add('george');
 
     expect(name.union(mind)).toEqual(new Set(mind.set));
+    expect(name.union(mind).set.length).toBe(3);
   });
 
   it('returns array of difference values between two sets using difference method', () => {
