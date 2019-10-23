@@ -4,7 +4,7 @@ class Set {
   }
 
   add(value) {
-    this.set.push(value);
+    if(!this.has(value)) this.set.push(value);
   }
 
   remove(value) {

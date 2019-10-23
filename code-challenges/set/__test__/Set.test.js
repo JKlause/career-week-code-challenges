@@ -13,6 +13,13 @@ describe('Set class', () => {
     name.add('dawn');
     expect(name.set).toEqual(['billy', 'dawn']);
   });
+
+  it('does not add duplicate values', () => {
+    const name = new Set;
+    name.add('billy');
+    name.add('billy');
+    expect(name.set.length).toBe(1);
+  });
   
   it('removes a value using remove method', ()=> {
     const name = new Set;
