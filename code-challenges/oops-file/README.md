@@ -19,7 +19,7 @@ fs.statSync(filePathName).mtime
 
 
 CHUNKS
-1. write function using fs.readdir(path) that takes a directory, and returns an array of all the files in that directory
+1. write function using fs.readdir(path) that takes a directory, and returns an array of all the files in that directory.... must remove after .
 
 2. write a function using fs.stat that takes a path for a file and gets the last time that file was modified
 

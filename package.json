@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "jest": "jest --runInBand"
+    "jest": "jest --runInBand",
+    "test:watch": "npm run jest -- --watchAll"
   },
   "repository": {
     "type": "git",
