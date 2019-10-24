@@ -3,7 +3,10 @@ const fs = require('fs');
 module.exports = (path) => {
   return fs.readdirSync(path)
     .map(file => {
-      return file.match(/^[^.]*/)[0];
+      return {
+        filePath: `${path}/${file}`,
+        fileName: file.match(/^[^.]*/)[0],
+      };
     });
 };
 

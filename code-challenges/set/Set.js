@@ -36,10 +36,10 @@ class Set {
   }
 
   static intersection(set1, set2) {
-    return new Set(set1.set.reduce((acc, item) => {
-      if(set2.has(item)) acc.push(item);
+    return set1.set.reduce((acc, item) => {
+      if(set2.has(item)) acc.add(item);
       return acc;
-    }, []));
+    }, new Set([]));
   }
 
   static union(set1, set2) {
@@ -47,16 +47,14 @@ class Set {
   }
 
   static difference(set1, set2) {
-  //   const newSet = set2.set.reduce((acc, item) => {
-  //     if(!set1.has(item)) acc.push(item);
-  //     return acc;
-  //   }, []);
-  //   const newArray = set1.set.reduce((acc, item) => {
-  //     if(!set2.has(item)) acc.push(item);
-  //     return acc;
-  //   }, newSet);
-  //   return new Set(newArray);
-  // }
+    return set1.set.reduce((acc, item) => {
+      if(!set2.has(item)) acc.add(item);
+      return acc;
+    }, set2.set.reduce((acc, item) => {
+      if(!set1.has(item)) acc.add(item);
+      return acc;
+    }, new Set([])));
+  }
  
 }
 
