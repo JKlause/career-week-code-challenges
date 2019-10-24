@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "jest": "jest --runInBand"
+    "jest": "jest --runInBand",
+    "test:watch": "npm run jest -- --watchAll"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "eslint": "^6.5.1"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "moment": "^2.24.0"
   }
 }
