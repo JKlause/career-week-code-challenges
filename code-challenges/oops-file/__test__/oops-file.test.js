@@ -1,5 +1,5 @@
 const readDir = require('../helper-functions/read-dir');
-const getDateMod = require('../helper-functions/time-modified')
+const getDateMod = require('../helper-functions/time-modified');
 const readFile = require('../helper-functions/read-file');
 const writeFile = require('../helper-functions/write-file');
 const oopsFileFunc = require('../oops-file');
@@ -9,7 +9,6 @@ describe('oops-file', () => {
   it('gets file names from a directory', ()=> {
     const files = readDir('code-challenges/oops-file/data');
     expect(files.length).toBe(3);
-    
   });
 
   it('gets last modified date for each file', () => {
