@@ -1,6 +1,9 @@
 class Set {
   constructor(array = []) {
-    this.set = array;
+    this.set = array.reduce((acc, item) => {
+      if(!acc.includes(item)) acc.push(item);
+      return acc;
+    }, []);
   }
 
   add(value) {
@@ -11,6 +14,7 @@ class Set {
     for(let i = 0; i < this.set.length; i++) {
       if(this.set[i] === value) {
         this.set.splice(i, 1);
+        break;
       }
     }
   }
@@ -32,36 +36,28 @@ class Set {
   }
 
   static intersection(set1, set2) {
-    const newArray = set1.set.reduce((acc, item) => {
+    return new Set(set1.set.reduce((acc, item) => {
       if(set2.has(item)) acc.push(item);
       return acc;
-    }, []);
-    return new Set(newArray);
+    }, []));
   }
 
   static union(set1, set2) {
-    const newSet = set1.set.reduce((acc, item) => {
-      acc.push(item);
-      return acc;
-    }, []);
-    const newArray = set2.set.reduce((acc, item) => {
-      if(!set1.has(item)) acc.push(item);
-      return acc;
-    }, newSet);
-    return new Set(newArray);
+    return new Set([...set1.set, ...set2.set]);
   }
 
   static difference(set1, set2) {
-    const newSet = set2.set.reduce((acc, item) => {
-      if(!set1.has(item)) acc.push(item);
-      return acc;
-    }, []);
-    const newArray = set1.set.reduce((acc, item) => {
-      if(!set2.has(item)) acc.push(item);
-      return acc;
-    }, newSet);
-    return new Set(newArray);
-  }
+  //   const newSet = set2.set.reduce((acc, item) => {
+  //     if(!set1.has(item)) acc.push(item);
+  //     return acc;
+  //   }, []);
+  //   const newArray = set1.set.reduce((acc, item) => {
+  //     if(!set2.has(item)) acc.push(item);
+  //     return acc;
+  //   }, newSet);
+  //   return new Set(newArray);
+  // }
+ 
 }
 
 module.exports = {

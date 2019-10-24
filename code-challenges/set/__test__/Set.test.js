@@ -7,6 +7,18 @@ describe('Set class', () => {
     expect(name.set).toEqual([]);
   });
 
+  it('will instantiate when given an unempty array', () => {
+    const nameArray = ['billy', 'tom'];
+    const name = new Set(nameArray);
+    expect(name.set).toEqual(nameArray);
+  });
+
+  it('will not instantiate duplicates when given an unempty array', () => {
+    const nameArray = ['billy', 'tom', 'billy'];
+    const name = new Set(nameArray);
+    expect(name.set.length).toBe(2);
+  });
+
   it('adds a value using add method', ()=> {
     const name = new Set;
     name.add('billy');
