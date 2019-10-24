@@ -29,8 +29,10 @@ describe('oops-file', () => {
   });
 
   it('returns the correct new file path using the oopsFileFunc', ()=> {
-    const newFilePaths = oopsFileFunc('code-challenges/oops-file/data');
-console.log(newFilePaths)
-  })
+    oopsFileFunc('code-challenges/oops-file/data');
+    const files = readDir('code-challenges/oops-file/data-new');
+    expect(files.length).toBe(3);
+    expect(files[0].fileName).toEqual('bill-test1-2019-10-24T21:56:08');
+  });
 
 });
