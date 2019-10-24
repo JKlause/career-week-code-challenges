@@ -2,6 +2,7 @@ const readDir = require('../helper-functions/read-dir');
 const getDateMod = require('../helper-functions/time-modified')
 const readFile = require('../helper-functions/read-file');
 const writeFile = require('../helper-functions/write-file');
+const oopsFileFunc = require('../oops-file');
 
 describe('oops-file', () => {
 
@@ -26,5 +27,10 @@ describe('oops-file', () => {
     const text = readFile('code-challenges/oops-file/newData/test.txt');
     expect(text).toBeDefined();
   });
+
+  it('returns the correct new file path using the oopsFileFunc', ()=> {
+    const newFilePaths = oopsFileFunc('code-challenges/oops-file/data');
+console.log(newFilePaths)
+  })
 
 });
